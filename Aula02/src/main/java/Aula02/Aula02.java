@@ -10,14 +10,15 @@ public class Aula02
     {
         String nome = JOptionPane.showInputDialog(null,"Insira seu nome:","Nome?",JOptionPane.QUESTION_MESSAGE);
         System.out.println("Olá " + nome + "!");
-        float resultado = calculadora();
-        System.out.println(resultado);
+        calculadora();
     }
-    
-    public static float calculadora()
+    public static void calculadora()
     {
         String valor1,valor2,op;
         float v1,v2,res=0;
+        
+        do
+        {
         valor1=JOptionPane.showInputDialog("Insira o primeiro valor:");
         op=JOptionPane.showInputDialog("Insira a operação:");
         valor2=JOptionPane.showInputDialog("Insira o segundo valor:");
@@ -34,6 +35,8 @@ public class Aula02
         else if(op.contains("/"))
             res = v1 / v2;
         
-        return res;
+        System.out.println(res);
+        }
+        while(op.equals(0)!= false);      
     }
 }

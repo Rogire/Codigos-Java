@@ -36,7 +36,11 @@ public class Aula02
             res = v1 * v2;
         else if(op.contains("/"))
             res = v1 / v2;
-    
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Insira um operador válido.");
+            break;
+        }
         System.out.println(res);
         JOptionPane.showMessageDialog(null, res);
         }      

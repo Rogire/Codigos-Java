@@ -6,6 +6,7 @@ package Aula03;
 
 /**
  *
+<<<<<<< HEAD
  * @author igor
  */
 public class Ponto 
@@ -30,3 +31,34 @@ public class Ponto
         y=val;
     }
 }
+=======
+ * @author ice
+ */
+ public class Ponto
+    {
+        double x;
+        double y;
+        
+        public Ponto(int longi, int lat)
+        {
+            x=longi;
+            y=lat;
+        }
+        public double getX()
+        {
+            return x;
+        }
+        public double getY()
+        {
+            return y;
+        }
+        public void setX(int val)
+        {
+            x=val;
+        }
+        public void setY(int val)
+        {
+            y=val;
+        }
+ }
+>>>>>>> fca6a8e (update)

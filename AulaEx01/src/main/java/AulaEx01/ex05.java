@@ -1,14 +1,13 @@
 package AulaEx01;
 import javax.swing.JOptionPane;
-import java.util.Scanner;
 public class ex05 
 {
     public static void main(String[] args) 
     {
-        float investimento=0,juros,valorMes=0,valorJuros=0;
+        float investimento=0,juros,valorMes=0,valorJuros;
         boolean conf=true;
-        String strConf;
-        Scanner teclado = new Scanner(System.in);
+        String [] options = {"Não","Sim"};
+        int itConf,cont=0;
         juros = Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor de juros"));
         valorMes = Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor para ser investido"
                 + " todo mês"));
@@ -16,22 +15,32 @@ public class ex05
         {
             for(int i=0;i<12;i++)
             {
-                valorMes +=valorMes;
-                valorJuros = valorMes*(juros/100);
-                investimento+=valorJuros+valorMes;
-                System.out.println(investimento+" "+(i+1));
+                investimento +=valorMes;
+                if(i<11)
+                {
+                    valorJuros = investimento * (juros/100);
+                    investimento +=valorJuros;
+                }
             }
-            System.out.println("Saldo do investimento após um ano: "+investimento);
-            System.out.println("Deseja processar mais um ano? (S/N)");
-            strConf = teclado.nextLine();
+            cont++;
+            JOptionPane.showMessageDialog(null,(cont==1)?("Saldo do investimento após "+cont+" ano: "+investimento) : ("Saldo do investimento após "+cont+" anos: "+investimento));
+            itConf = JOptionPane.showOptionDialog(null, "Deseja processar mais um ano? (S/N)", "Deseja continuar?", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,options, options[1]);
             
-            if(strConf.equals("S"))
-                conf = true;
-            else if(strConf.equals("N"))
-                conf=false;
-            else
-                System.out.println("Selecione uma opção válida (S/N)");
+            switch (itConf)
+            {
+                case 1->{
+                     conf = true;
+                     break;
+                }
+                case 0->{
+                    conf=false;
+                    break;
+                }
+                default->
+                {
+                    break;
+                }     
+                }
+            }
         }
     }
-    
-}

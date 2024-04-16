@@ -1,112 +1,99 @@
 package AulaEx01;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ice
  */
 public class ex02
 {
-    public static String txt()
+    public static float calculadora(int op,float val,String options[])
     {
-        return
-        """
-        (1) somar
-        (2) subtrair
-        (3) dividir
-        (4) multiplicar
-        (5) sair
-        """;
-    }
-    public static float calculadora(int op,Scanner teclado,float val)
-    {
-        float v1;
-        
-        while(op!=5)
+        float v1,v0;
+        op = JOptionPane.showOptionDialog(null, "Selecione a operação", "Selecione a operação", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,"");
+        while(op!=4)
         {
-        
         switch(op)
         {
-            case 1->{
-                System.out.println("Insira o valor");
-                v1=teclado.nextFloat();
+            case 0->{
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v0=val;
                 val +=v1;
-                System.out.println(val +" + "+v1+"="+val);
+                JOptionPane.showMessageDialog(null,v0 +" + "+v1+"="+val);
+                break;
+            }
+            case 1->{
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v0=val;
+                val -=v1;
+                JOptionPane.showMessageDialog(null,v0 +" - "+v1+"="+val);
                 break;
             }
             case 2->{
-                System.out.println("Insira o valor");
-                v1=teclado.nextFloat();
-                val -=v1;
-                System.out.println(val +" - "+v1+"="+val);
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v0=val;
+                val /=v1;
+                JOptionPane.showMessageDialog(null,v0 +" / "+v1+"="+val);
                 break;
             }
             case 3->{
-                System.out.println("Insira o valor");
-                v1=teclado.nextFloat();
-                val /=v1;
-                System.out.println(val +" / "+v1+"="+val);
-                break;
-            }
-            case 4->{
-                System.out.println("Insira o valor");
-                v1=teclado.nextFloat();
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v0=val;
                 val *=v1;
-                System.out.println(val +" * "+v1+"="+val);
+                JOptionPane.showMessageDialog(null,v0 +" * "+v1+"="+val);
                 break;
             }
-            default->{
-                System.out.println("Selecione uma das operações");
+            case 4->
+            {
+                break;
             }
         }
-        System.out.println(txt());
-        System.out.println("Selecione a operação");
-        op = teclado.nextInt();
+        op = JOptionPane.showOptionDialog(null, "Selecione a operação", "Selecione a operação", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,"");
         }
         return val;
     }
     public static void main(String[] args) 
     {
-        Scanner teclado = new Scanner(System.in);
         float v1,v2,val=0;
         int op;
-        System.out.println(txt());
-        System.out.println("Selecione a operação");
-        op = teclado.nextInt();
+        String[] options={"+","-","/","*","Sair"};
+        op = JOptionPane.showOptionDialog(null, "Selecione a operação", "Selecione a operação", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,"");
         switch(op)
         {
-            case 1->{
-                System.out.println("Insira os valores");
-                v1=teclado.nextFloat();
-                v2=teclado.nextFloat();
+            case 0->{
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v2=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
                 val = v1+v2;
-                System.out.println(v1 +" + "+v2+"="+val);
+                JOptionPane.showMessageDialog(null,v1 +" + "+v2+"="+val);
+                break;
+            }
+            case 1->{
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v2=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                val = v1-v2;
+                JOptionPane.showMessageDialog(null,v1 +" - "+v2+"="+val);
                 break;
             }
             case 2->{
-                System.out.println("Insira os valores");
-                v1=teclado.nextFloat();
-                v2=teclado.nextFloat();
-                val = v1-v2;
-                System.out.println(v1 +" - "+v2+"="+val);
-                break;
-            }
-            case 3->{
-                System.out.println("Insira os valores");
-                v1=teclado.nextFloat();
-                v2=teclado.nextFloat();
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v2=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
                 val = v1/v2;
-                System.out.println(v1 +" / "+v2+"="+val);
+                JOptionPane.showMessageDialog(null,v1 +" / "+v2+"="+val);
                 break;
             }
-            case 4->{
-                System.out.println("Insira os valores");
-                v1=teclado.nextFloat();
-                v2=teclado.nextFloat();
+            case 3->
+            {
+                v1=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
+                v2=Float.parseFloat(JOptionPane.showInputDialog(null,"Insira o valor"));
                 val = v1*v2;
-                System.out.println(v1 +" * "+v2+"="+val);
+                JOptionPane.showMessageDialog(null,v1 +" * "+v2+"="+val);
+                break;
+            }
+            case 4->
+            {
                 break;
             }
         }
-        calculadora(op,teclado,0);
+        calculadora(op,val,options);
     }
 }

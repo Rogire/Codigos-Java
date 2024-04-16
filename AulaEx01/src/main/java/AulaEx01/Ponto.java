@@ -4,7 +4,7 @@ package AulaEx01;
  *
  * @author ice
  */
-public class Ponto 
+public class Ponto //Classe usada no exercício 01
 {
 
     public int getX() {

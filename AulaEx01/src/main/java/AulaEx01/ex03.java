@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 public class ex03 
 {
+    //B
     final static private int NUM_AULAS=15;
     final static private int NUM_ATV=12;
     public static void finalDeSemestre(Aluno a)
@@ -22,18 +23,21 @@ public class ex03
     
     public static void main(String[] args) 
     {
-        Scanner teclado = new Scanner(System.in);
-//==================================A===========================================    
-        /*Aluno Al= new Aluno();
+        //Scanner teclado = new Scanner(System.in);
+//==================================EX03-A===========================================    
+        /*
+        Aluno Al= new Aluno();
         System.out.println("Insira a nota final");
         Al.setNotaFinal(teclado.nextFloat());
         System.out.println("Insira o número de faltas");
         Al.setNumFaltas(teclado.nextInt());
         System.out.println("Insira o número de tarefas feitas");
         Al.setNumTaf(teclado.nextInt());
-        finalDeSemestre(Al);*/
-//==================================B=========================================== 
-    Aluno[] Alunos=new Aluno[3];
+        finalDeSemestre(Al);
+        */
+//==================================EX03-B=========================================== 
+    /*
+        Aluno[] Alunos=new Aluno[3];
     for(int i=0;i<3;i++)
         Alunos[i]=new Aluno();
     
@@ -51,5 +55,6 @@ public class ex03
        System.out.println("Aluno"+(i+1)+":");
        finalDeSemestre(Alunos[i]);
     }   
+    */
 }
 }

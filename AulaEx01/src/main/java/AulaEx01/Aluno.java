@@ -5,7 +5,7 @@ package AulaEx01;
  *
  * @author ice
  */
-public class Aluno 
+public class Aluno  // Classe usada no exercício 03
 {
 
     public float getNotaFinal() {

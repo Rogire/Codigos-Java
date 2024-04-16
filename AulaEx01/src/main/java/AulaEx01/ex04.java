@@ -9,7 +9,8 @@ public class ex04
     public static void main(String[] args) 
     {
         Scanner teclado = new Scanner(System.in);
-        int in =1,val,prox;
+        int val,prox;
+        
         System.out.print("Insira o tamanho da sequência: ");
         val=teclado.nextInt();
         int seq[] = new int[val];

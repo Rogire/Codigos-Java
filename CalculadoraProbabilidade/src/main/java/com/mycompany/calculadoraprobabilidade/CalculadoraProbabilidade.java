@@ -54,7 +54,7 @@ public class CalculadoraProbabilidade {
     public static void main(String[] args) 
     {
     Scanner teclado = new Scanner(System.in);
-    int op=0, val1=0, val2=0;
+    int op, val1=0, val2=0;
     System.out.println(teste());
     op = teclado.nextInt();
     switch (op)
